@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen y Práctica para Examen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        @media print {
+            .page-break { page-break-before: always; }
+            body { background-color: white; }
+            .no-print { display: none; }
+            .shadow-lg { box-shadow: none; }
+            .p-12 { padding: 0; }
+        }
+        h1, h2, h3 { color: #1e3a8a; }
+        .math-block { margin: 10px 0; }
+    </style>
+</head>
+<body class="bg-gray-200 p-4 md:p-8 text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-lg rounded-lg">
+        
+        <div class="no-print mb-8 p-4 bg-blue-100 text-blue-800 rounded">
+            <strong>💡 Consejo:</strong> Presiona <code>Ctrl + P</code> (Windows) o <code>Cmd + P</code> (Mac) y selecciona "Guardar como PDF" para imprimir este documento.
+        </div>
+
+        <!-- ============================== RESUMEN ============================== -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold uppercase">Resumen Rápido para el Examen</h1>
+            <p class="text-gray-600 mt-2">Matemáticas Discretas - Lógica, Conjuntos e Inferencia</p>
+        </div>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-800 pb-2 mb-4">1. Lógica y Tablas de Verdad</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Conjunción (\(\land\)) "Y":</strong> Solo es V si ambas son V.</li>
+                <li><strong>Disyunción (\(\lor\)) "O":</strong> Solo es F si ambas son F.</li>
+                <li><strong>Implicación (\(\Rightarrow\)) "Si... entonces":</strong> Solo es F cuando la primera es V y la segunda es F (V \(\Rightarrow\) F = F).</li>
+                <li><strong>Bicondicional (\(\Leftrightarrow\)):</strong> Es V si ambas son iguales (V-V o F-F).</li>
+                <li>Número de combinaciones en una tabla: \(2^n\) (donde \(n\) es el número de proposiciones).</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-800 pb-2 mb-4">2. Leyes de Equivalencia (¡Claves para simplificar!)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Doble Negación:</strong> \(\neg(\neg p) \equiv p\)</li>
+                        <li><strong>De Morgan:</strong> \(\neg(p \land q) \equiv \neg p \lor \neg q\) <br> \(\neg(p \lor q) \equiv \neg p \land \neg q\)</li>
+                        <li><strong>Implicación:</strong> \(p \Rightarrow q \equiv \neg p \lor q\)</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Absorción:</strong> \(p \land (p \lor q) \equiv p\) <br> \(p \lor (p \land q) \equiv p\)</li>
+                        <li><strong>Idempotencia:</strong> \(p \lor p \equiv p\)</li>
+                        <li><strong>Identidad/Contradicción:</strong> \(p \lor \neg p \equiv V\) <br> \(p \land \neg p \equiv F\)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-800 pb-2 mb-4">3. Reglas de Inferencia (Para demostrar validez)</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Modus Ponens:</strong> Si \(p \Rightarrow q\) y tienes \(p\), entonces deduces \(q\).</li>
+                <li><strong>Modus Tollens:</strong> Si \(p \Rightarrow q\) y tienes \(\neg q\), entonces deduces \(\neg p\).</li>
+                <li><strong>Silogismo Disyuntivo:</strong> Si tienes \(p \lor q\) y \(\neg p\), entonces deduces \(q\).</li>
+                <li><strong>Silogismo Hipotético:</strong> Si \(p \Rightarrow q\) y \(q \Rightarrow r\), entonces \(p \Rightarrow r\).</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-800 pb-2 mb-4">4. Cuantificadores</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Universal (\(\forall\)):</strong> "Para todo". Se niega cambiando a \(\exists\) y negando la propiedad: \(\neg(\forall x p(x)) \equiv \exists x \neg p(x)\)</li>
+                <li><strong>Existencial (\(\exists\)):</strong> "Existe al menos uno". Se niega: \(\neg(\exists x p(x)) \equiv \forall x \neg p(x)\)</li>
+                <li>Ojo al negar implicaciones: \(\neg(\forall x(P(x) \Rightarrow Q(x))) \equiv \exists x(P(x) \land \neg Q(x))\)</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold border-b-2 border-blue-800 pb-2 mb-4">5. Teoría de Conjuntos</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Contenido / Subconjunto (\(\subseteq\)):</strong> Para probar que \(A \subseteq B\), tomas un elemento arbitrario \(x \in A\) y demuestras lógicamente que \(x \in B\). (Ej. Si es múltiplo de 6, \(x=6k=2(3k)\), por ende es múltiplo de 2).</li>
+                <li><strong>Igualdad (\(=\)):</strong> \(A = B\) se prueba demostrando \(A \subseteq B\) y \(B \subseteq A\).</li>
+                <li><strong>Operaciones:</strong> Unión (\(\cup\)), Intersección (\(\cap\)), Diferencia (\(A-B = A \cap \overline{B}\)).</li>
+                <li><strong>Diagramas de Venn (Cardinalidad):</strong> \(|A \cup B| = |A| + |B| - |A \cap B|\). Si son 3 conjuntos, sumas los individuales, restas las intersecciones dobles y sumas la intersección triple.</li>
+            </ul>
+        </section>
+
+        <!-- Salto de página para imprimir -->
+        <div class="page-break"></div>
+
+        <!-- ============================== PRÁCTICA ============================== -->
+        <div class="text-center mb-10 mt-10 md:mt-0">
+            <h1 class="text-3xl font-bold uppercase">Práctica para el Examen (7 Preguntas)</h1>
+            <p class="text-gray-600 mt-2">¡Mucha suerte, lo vas a hacer excelente!</p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Pregunta 1 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 1: Tablas de Verdad</h3>
+                <p class="mt-2">Construya la tabla de verdad para la siguiente proposición compuesta y determine si es una tautología, contradicción o contingencia:</p>
+                <div class="math-block text-center text-lg">\((p \Rightarrow q) \land (p \land \neg q)\)</div>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-32 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 2: Leyes de Equivalencia</h3>
+                <p class="mt-2">Demuestre la siguiente equivalencia utilizando las leyes de la lógica (indique qué ley usa en cada paso):</p>
+                <div class="math-block text-center text-lg">\(\neg [p \lor (\neg p \land q)] \equiv \neg p \land \neg q\)</div>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-40 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 3: Reglas de Inferencia</h3>
+                <p class="mt-2">Determine y demuestre la validez del siguiente argumento, indicando la regla de inferencia en cada paso:</p>
+                <ol class="list-decimal pl-10 mt-2 space-y-1 font-mono">
+                    <li>\(p \Rightarrow \neg q\) (Premisa 1)</li>
+                    <li>\(q \lor r\) (Premisa 2)</li>
+                    <li>\(p\) (Premisa 3)</li>
+                    <li class="border-t border-black w-24 pt-1">\(\therefore r\) (Conclusión)</li>
+                </ol>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-40 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 4: Cuantificadores (Negación)</h3>
+                <p class="mt-2">Traduzca la negación de la siguiente proposición formal y pásela a lenguaje natural (asuma universo = Empleados):</p>
+                <div class="math-block text-center text-lg">\(\forall x, (x \text{ tiene certificación} \Rightarrow x \text{ tiene aumento de salario})\)</div>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-24 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 5: Subconjuntos y Múltiplos</h3>
+                <p class="mt-2">Sean \(A = \{x \in \mathbb{Z} : x \text{ es múltiplo de 15}\}\) y \(B = \{x \in \mathbb{Z} : x \text{ es múltiplo de 5}\}\). Usando el método del elemento arbitrario, demuestre formalmente que \(A \subseteq B\).</p>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-40 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 6 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 6: Diagramas de Venn y Cardinalidad</h3>
+                <p class="mt-2">De 400 alumnos en una escuela de idiomas, se sabe que: 120 estudian <b>únicamente</b> francés; 200 estudian francés e inglés; y 50 estudian idiomas diferentes a estos dos. ¿Cuántos estudiantes estudian <b>solo</b> inglés?</p>
+                <p class="text-sm text-gray-500">(Sugerencia: Usa la fórmula \(|U| = |solo F| + |F \cap I| + |solo I| + |ninguno|\))</p>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-32 rounded-lg"></div>
+            </div>
+
+            <!-- Pregunta 7 -->
+            <div>
+                <h3 class="text-xl font-bold">Pregunta 7: Simplificación con Leyes de Conjuntos</h3>
+                <p class="mt-2">Utilice las leyes de conjuntos para simplificar la siguiente expresión (indique la ley en cada paso):</p>
+                <div class="math-block text-center text-lg">\([(A \cup B) \cap A] \cup B\)</div>
+                <div class="mt-4 border-2 border-dashed border-gray-300 h-40 rounded-lg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ç
